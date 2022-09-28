@@ -1,0 +1,35 @@
+#Consultas
+
+SELECT id_producto,
+	descripcion,
+	cantidad_inventario,
+	categoria
+FROM `productos`
+INNER JOIN categorias
+ON productos.id_categoria*categorias.id_categoria
+
+
+#Consulta 2
+
+SELECT id_producto,
+	descripcion,
+	cantidad_inventario,
+	categoria
+FROM `productos`
+INNER JOIN categorias
+ON productos.id_categoria*categorias.id_categoria
+WHERE categoria LIKE '%alimento%'
+AND cantidad_inventario >20
+
+
+
+#Modificar
+UPDATE `productos` SET unidad_medida = 'grm'
+WHERE unidad_medida ='grs'
+#donde halla el campo grs se cambiará por la unidad de medida grm 
+
+
+#modificar
+UPDATE `categoria` SET categoria = 'Vestido'
+WHERE id_producto =1
+#solo al id 1 cambiamos el campo categoria por el campo vestido
